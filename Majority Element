@@ -1,0 +1,20 @@
+public class Solution {
+    
+        public int MajorityElement(int[] nums)
+        {
+           int count = 1;
+            int cand = nums[0];
+            for(int i = 1; i < nums.Length; i++)
+            {
+                int current = nums[i];
+                if(current == cand) count++;
+                else count --;
+                if(count == 0)
+                {
+                    cand = current;
+                    count = 1;
+                }
+            } 
+            return cand;
+        }
+    }
